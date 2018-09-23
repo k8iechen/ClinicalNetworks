@@ -3,7 +3,23 @@
 
 $(document).ready(function(){
     
-    localStorage['name'] = 'mudkip clinics';
+    var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+            }
+        }
+    };
+    
+    var name = getUrlParameter('user')
+    localStorage['name'] = name;
     
     function ajaxCall(url, data, successCallback, errorCallback)
     {
@@ -51,6 +67,7 @@ $(document).ready(function(){
         ajaxCall('http://178.128.226.180:5050/yhacksapi/updateData/', {'username' : localStorage['name'], 'supplies' : supplies},
             function(data) {
             //You can use any jQuery/JavaScript here!!!
+                alert('Data sent!');
             },
             function (xhr, status, error) {
                 console.log('Error: ' + error);
@@ -76,7 +93,7 @@ $(document).ready(function(){
     });
     
     
-    ajaxCall('http://178.128.226.180:5050/yhacksapi/getInfo/', {'username' : localStorage['name'] },
+    /*ajaxCall('http://178.128.226.180:5050/yhacksapi/getInfo/', {'username' : localStorage['name'] },
         function(data)
         {
             $("#u4_text").text(data.name);
@@ -87,7 +104,7 @@ $(document).ready(function(){
             console.log('Error: ' + error);
             alert('Error connecting to the server.');
         });
-        
+        */
     if (false)
     {
         ajaxCall('http://178.128.226.180:5050/yhacksapi/getData/', {'username' : localStorage['name'] }, 
