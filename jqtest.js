@@ -18,8 +18,9 @@ $(document).ready(function(){
         }
     };
     
-    var name = getUrlParameter('user');
-    localStorage['name'] = name;
+    var user = getUrlParameter('user');
+    var name = getUrlParameter('name');
+    localStorage['name'] = user;
     
     document.getElementById('name').innerHTML = name;
     
