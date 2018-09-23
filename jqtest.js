@@ -36,17 +36,17 @@ $(document).ready(function(){
     $('#ahhhh').click(function() {
     //Send the AJAX call to the server
         supplies = {
-            bandages: document.getElementById("bandages").value,
-            examination_gloves: document.getElementById("examination_gloves").value,
-            scalpels: document.getElementById("scalpels").value,
-            iv_kits: document.getElementById("iv_kits").value,
-            masks: document.getElementById("masks").value,
-            needles: document.getElementById("needles").value,
-            vitamins: document.getElementById("vitamins").value,
-            dental_supplies: document.getElementById("dental_supplies").value,
-            optical_supplies: document.getElementById("optical_supplies").value,
-            personal_hygiene: document.getElementById("personal_hygiene").value,
-            antiseptics: document.getElementById("antiseptics").value,
+            bandages: parseInt(document.getElementById("bandages").value),
+            examination_gloves: parseInt(document.getElementById("examination_gloves").value),
+            scalpels: parseInt(document.getElementById("scalpels").value),
+            iv_kits: parseInt(document.getElementById("iv_kits").value),
+            masks: parseInt(document.getElementById("masks").value),
+            needles: parseInt(document.getElementById("needles").value),
+            vitamins: parseInt(document.getElementById("vitamins").value),
+            dental_supplies: parseInt(document.getElementById("dental_supplies").value),
+            optical_supplies: parseInt(document.getElementById("optical_supplies").value),
+            personal_hygiene: parseInt(document.getElementById("personal_hygiene").value),
+            antiseptics: parseInt(document.getElementById("antiseptics").value),
         }
         ajaxCall('http://178.128.226.180:5050/yhacksapi/updateData/', {'username' : localStorage['name'], 'supplies' : supplies},
             function(data) {
@@ -202,7 +202,7 @@ $(document).ready(function(){
     {
         ajaxCall('http://178.128.226.180:5050/yhacksapi/getData/', {'username' : localStorage['name'] }, 
         function(data) {
-            data = JSON.parse(data.message[0].supplies);
+            data = data.message;
             console.log(data.bandages);
             document.getElementById("fuckthis").innerHTML = [
                 "<table>",
