@@ -191,8 +191,23 @@ $(document).ready(function(){
     {
         ajaxCall('http://178.128.226.180:5050/yhacksapi/getData/', {'username' : localStorage['name'] }, 
         function(data) {
-            data = data.message[0].supplies;
+            data = JSON.parse(data.message[0].supplies);
             console.log(data.bandages);
+            document.getElementById("fuckthis").innerHTML = [
+                "<table>",
+                `<tr><td>bandages</td><td>${data.bandages == null ? 0 : data.bandages}</td></tr>`,
+                `<tr><td>examination_gloves</td><td>${data.examination_gloves == null ? 0 : data.examination_gloves}</td></tr>`,
+                `<tr><td>scalpels</td><td>${data.scalpels == null ? 0 : data.scalpels}</td></tr>`,
+                `<tr><td>iv_kits</td><td>${data.iv_kits == null ? 0 : data.iv_kits}</td></tr>`,
+                `<tr><td>masks</td><td>${data.masks == null ? 0 : data.masks}</td></tr>`,
+                `<tr><td>needles</td><td>${data.needles == null ? 0 : data.needles}</td></tr>`,
+                `<tr><td>vitamins</td><td>${data.vitamins == null ? 0 : data.vitamins}</td></tr>`,
+                `<tr><td>dental_supplies</td><td>${data.dental_supplies == null ? 0 : data.dental_supplies}</td></tr>`,
+                `<tr><td>optical_supplies</td><td>${data.optical_supplies == null ? 0 : data.optical_supplies}</td></tr>`,
+                `<tr><td>personal_hygiene</td><td>${data.personal_hygiene == null ? 0 : data.personal_hygiene}</td></tr>`,
+                `<tr><td>antiseptics</td><td>${data.antiseptics == null ? 0 : data.antiseptics}</td></tr>`,
+                "</table>"
+            ].join('\n')
             $("#u19_text").text(data.bandages == null ? 0 : data.bandages);
             $("#u22_text").text(data.examination_gloves == null ? 0 : data.examination_gloves);
             $("#u25_text").text(data.scalpels == null ? 0 : data.scalpels);
