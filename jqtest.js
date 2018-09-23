@@ -23,6 +23,10 @@ $(document).ready(function(){
     localStorage['name'] = user;
     
     document.getElementById('name').innerHTML = name;
+    if (user === 'chapter')
+    {
+        document.getElementById('ahhhh').style.visibility="hidden"
+    }
     
     function ajaxCall(url, data, successCallback, errorCallback)
     {
