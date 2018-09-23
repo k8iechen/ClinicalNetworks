@@ -195,17 +195,17 @@ $(document).ready(function(){
             console.log(data.bandages);
             document.getElementById("fuckthis").innerHTML = [
                 "<table>",
-                `<tr><td>bandages</td><td><input type="number" value=${data.bandages == null ? 0 : data.bandages}></td></tr>`,
-                `<tr><td>examination_gloves</td><td><input type="number" value=${data.examination_gloves == null ? 0 : data.examination_gloves}></td></tr>`,
-                `<tr><td>scalpels</td><td><input type="number" value=${data.scalpels == null ? 0 : data.scalpels}></td></tr>`,
-                `<tr><td>iv_kits</td><td><input type="number" value=${data.iv_kits == null ? 0 : data.iv_kits}></td></tr>`,
-                `<tr><td>masks</td><td><input type="number" value=${data.masks == null ? 0 : data.masks}></td></tr>`,
-                `<tr><td>needles</td><td><input type="number" value=${data.needles == null ? 0 : data.needles}></td></tr>`,
-                `<tr><td>vitamins</td><td><input type="number" value=${data.vitamins == null ? 0 : data.vitamins}></td></tr>`,
-                `<tr><td>dental_supplies</td><td><input type="number" value=${data.dental_supplies == null ? 0 : data.dental_supplies}></td></tr>`,
-                `<tr><td>optical_supplies</td><td><input type="number" value=${data.optical_supplies == null ? 0 : data.optical_supplies}></td></tr>`,
-                `<tr><td>personal_hygiene</td><td><input type="number" value=${data.personal_hygiene == null ? 0 : data.personal_hygiene}></td></tr>`,
-                `<tr><td>antiseptics</td><td><input type="number" value=${data.antiseptics == null ? 0 : data.antiseptics}></td></tr>`,
+                `<tr><td>bandages</td><td><input id="bandages" type="number" value=${data.bandages == null ? 0 : data.bandages}></td></tr>`,
+                `<tr><td>examination_gloves</td><td><input id="examination_gloves" type="number" value=${data.examination_gloves == null ? 0 : data.examination_gloves}></td></tr>`,
+                `<tr><td>scalpels</td><td><input id="scalpels" type="number" value=${data.scalpels == null ? 0 : data.scalpels}></td></tr>`,
+                `<tr><td>iv_kits</td><td><input id="iv_kits" type="number" value=${data.iv_kits == null ? 0 : data.iv_kits}></td></tr>`,
+                `<tr><td>masks</td><td><input id="masks" type="number" value=${data.masks == null ? 0 : data.masks}></td></tr>`,
+                `<tr><td>needles</td><td><input id="needles" type="number" value=${data.needles == null ? 0 : data.needles}></td></tr>`,
+                `<tr><td>vitamins</td><td><input id="vitamins" type="number" value=${data.vitamins == null ? 0 : data.vitamins}></td></tr>`,
+                `<tr><td>dental_supplies</td><td><input id="dental_supplies" type="number" value=${data.dental_supplies == null ? 0 : data.dental_supplies}></td></tr>`,
+                `<tr><td>optical_supplies</td><td><input id="optical_supplies" type="number" value=${data.optical_supplies == null ? 0 : data.optical_supplies}></td></tr>`,
+                `<tr><td>personal_hygiene</td><td><input id="personal_hygiene" type="number" value=${data.personal_hygiene == null ? 0 : data.personal_hygiene}></td></tr>`,
+                `<tr><td>antiseptics</td><td><input id="antiseptics" type="number" value=${data.antiseptics == null ? 0 : data.antiseptics}></td></tr>`,
                 "</table>"
             ].join('\n')
             $("#u19_text").text(data.bandages == null ? 0 : data.bandages);
