@@ -88,7 +88,7 @@ $(document).ready(function(){
             alert('Error connecting to the server.');
         });
         
-    if (localStorage['name'] == 'chapter')
+    if (false)
     {
         ajaxCall('http://178.128.226.180:5050/yhacksapi/getData/', {'username' : localStorage['name'] }, 
         function(data) {
@@ -202,8 +202,8 @@ $(document).ready(function(){
     {
         ajaxCall('http://178.128.226.180:5050/yhacksapi/getData/', {'username' : localStorage['name'] }, 
         function(data) {
-            data = JSON.parse(data.message[0].supplies);
-            console.log(data.bandages);
+            data = (data.message);
+            console.log(JSON.stringify(data));
             document.getElementById("fuckthis").innerHTML = [
                 "<table>",
                 `<tr><td>bandages</td><td><input id="bandages" type="number" value=${data.bandages == null ? 0 : data.bandages}></td></tr>`,
