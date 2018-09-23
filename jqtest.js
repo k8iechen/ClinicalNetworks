@@ -18,7 +18,7 @@ $(document).ready(function(){
         }
     };
     
-    var name = getUrlParameter('user')
+    var name = getUrlParameter('user');
     localStorage['name'] = name;
     
     function ajaxCall(url, data, successCallback, errorCallback)
