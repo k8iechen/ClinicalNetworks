@@ -195,17 +195,17 @@ $(document).ready(function(){
             console.log(data.bandages);
             document.getElementById("fuckthis").innerHTML = [
                 "<table>",
-                `<tr><td>bandages</td><td>${data.bandages == null ? 0 : data.bandages}</td></tr>`,
-                `<tr><td>examination_gloves</td><td>${data.examination_gloves == null ? 0 : data.examination_gloves}</td></tr>`,
-                `<tr><td>scalpels</td><td>${data.scalpels == null ? 0 : data.scalpels}</td></tr>`,
-                `<tr><td>iv_kits</td><td>${data.iv_kits == null ? 0 : data.iv_kits}</td></tr>`,
-                `<tr><td>masks</td><td>${data.masks == null ? 0 : data.masks}</td></tr>`,
-                `<tr><td>needles</td><td>${data.needles == null ? 0 : data.needles}</td></tr>`,
-                `<tr><td>vitamins</td><td>${data.vitamins == null ? 0 : data.vitamins}</td></tr>`,
-                `<tr><td>dental_supplies</td><td>${data.dental_supplies == null ? 0 : data.dental_supplies}</td></tr>`,
-                `<tr><td>optical_supplies</td><td>${data.optical_supplies == null ? 0 : data.optical_supplies}</td></tr>`,
-                `<tr><td>personal_hygiene</td><td>${data.personal_hygiene == null ? 0 : data.personal_hygiene}</td></tr>`,
-                `<tr><td>antiseptics</td><td>${data.antiseptics == null ? 0 : data.antiseptics}</td></tr>`,
+                `<tr><td>bandages</td><td><input type="number" value=${data.bandages == null ? 0 : data.bandages}></td></tr>`,
+                `<tr><td>examination_gloves</td><td><input type="number" value=${data.examination_gloves == null ? 0 : data.examination_gloves}></td></tr>`,
+                `<tr><td>scalpels</td><td><input type="number" value=${data.scalpels == null ? 0 : data.scalpels}></td></tr>`,
+                `<tr><td>iv_kits</td><td><input type="number" value=${data.iv_kits == null ? 0 : data.iv_kits}></td></tr>`,
+                `<tr><td>masks</td><td><input type="number" value=${data.masks == null ? 0 : data.masks}></td></tr>`,
+                `<tr><td>needles</td><td><input type="number" value=${data.needles == null ? 0 : data.needles}></td></tr>`,
+                `<tr><td>vitamins</td><td><input type="number" value=${data.vitamins == null ? 0 : data.vitamins}></td></tr>`,
+                `<tr><td>dental_supplies</td><td><input type="number" value=${data.dental_supplies == null ? 0 : data.dental_supplies}></td></tr>`,
+                `<tr><td>optical_supplies</td><td><input type="number" value=${data.optical_supplies == null ? 0 : data.optical_supplies}></td></tr>`,
+                `<tr><td>personal_hygiene</td><td><input type="number" value=${data.personal_hygiene == null ? 0 : data.personal_hygiene}></td></tr>`,
+                `<tr><td>antiseptics</td><td><input type="number" value=${data.antiseptics == null ? 0 : data.antiseptics}></td></tr>`,
                 "</table>"
             ].join('\n')
             $("#u19_text").text(data.bandages == null ? 0 : data.bandages);
