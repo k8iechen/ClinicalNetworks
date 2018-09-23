@@ -35,16 +35,27 @@ $(document).ready(function(){
     
     $('#ahhhh').click(function() {
     //Send the AJAX call to the server
-        ajaxCall('http://178.128.226.180:5050/yhacksapi/updateData/', {'username' : localStorage['name'], 'supplies' : *********INSERT HERE*******}, 
-        function(data) {
-        //You can use any jQuery/JavaScript here!!!
-            console.log("Message: " + data.message.syringes);
-            console.log('data: ' + JSON.stringify(data.message));
-        },
-        function (xhr, status, error) {
-            console.log('Error: ' + error);
-            alert('Error connecting to the server.');
-        });
+        supplies = {
+            bandages: document.getElementById("bandages").value,
+            examination_gloves: document.getElementById("examination_gloves").value,
+            scalpels: document.getElementById("scalpels").value,
+            iv_kits: document.getElementById("iv_kits").value,
+            masks: document.getElementById("masks").value,
+            needles: document.getElementById("needles").value,
+            vitamins: document.getElementById("vitamins").value,
+            dental_supplies: document.getElementById("dental_supplies").value,
+            optical_supplies: document.getElementById("optical_supplies").value,
+            personal_hygiene: document.getElementById("personal_hygiene").value,
+            antiseptics: document.getElementById("antiseptics").value,
+        }
+        ajaxCall('http://178.128.226.180:5050/yhacksapi/updateData/', {'username' : localStorage['name'], 'supplies' : supplies},
+            function(data) {
+            //You can use any jQuery/JavaScript here!!!
+            },
+            function (xhr, status, error) {
+                console.log('Error: ' + error);
+                alert('Error connecting to the server.');
+            });
     });
     
     $('#button').click(function() {
