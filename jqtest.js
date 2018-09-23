@@ -35,7 +35,7 @@ $(document).ready(function(){
     
     $('#ahhhh').click(function() {
     //Send the AJAX call to the server
-        ajaxCall('http://178.128.226.180:5050/yhacksapi/getData/', {'username' : localStorage['name'] }, 
+        ajaxCall('http://178.128.226.180:5050/yhacksapi/updateData/', {'username' : localStorage['name'], 'supplies' : *********INSERT HERE*******}, 
         function(data) {
         //You can use any jQuery/JavaScript here!!!
             console.log("Message: " + data.message.syringes);
@@ -208,18 +208,8 @@ $(document).ready(function(){
                 `<tr><td>antiseptics</td><td><input type="number" value=${data.antiseptics == null ? 0 : data.antiseptics}></td></tr>`,
                 "</table>"
             ].join('\n')
-            $("#u19_text").text(data.bandages == null ? 0 : data.bandages);
-            $("#u22_text").text(data.examination_gloves == null ? 0 : data.examination_gloves);
-            $("#u25_text").text(data.scalpels == null ? 0 : data.scalpels);
-            $("#u28_text").text(data.iv_kits == null ? 0 : data.iv_kits);
-            $("#u31_text").text(data.masks == null ? 0 : data.masks);
-            $("#u34_text").text(data.needles == null ? 0 : data.needles);
-            $("#u37_text").text(data.vitamins == null ? 0 : data.vitamins);
-            $("#u40_text").text(data.dental_supplies == null ? 0 : data.dental_supplies);
-            $("#u43_text").text(data.optical_supplies == null ? 0 : data.optical_supplies);
-            $("#u46_text").text(data.personal_hygiene == null ? 0 : data.personal_hygiene);
-            $("#u49_text").text(data.antiseptics == null ? 0 : data.antiseptics);
         },
+        
         function (xhr, status, error) {
             console.log('Error: ' + error);
             alert('Error connecting to the server.');
