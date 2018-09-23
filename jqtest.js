@@ -60,7 +60,7 @@ $(document).ready(function(){
     //Send the AJAX call to the server
         supplies = {
             bandages: parseInt(document.getElementById("bandages").value),
-            examination_gloves: parseInt(document.getElementById("examination_gloves").value),
+            examination_supplies: parseInt(document.getElementById("examination_gloves").value),
             scalpels: parseInt(document.getElementById("scalpels").value),
             iv_kits: parseInt(document.getElementById("iv_kits").value),
             masks: parseInt(document.getElementById("masks").value),
