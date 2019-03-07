@@ -74,8 +74,7 @@ $(document).ready(function(){
         ajaxCall('http://178.128.226.180:5050/yhacksapi/updateData/', {'username' : localStorage['name'], 'supplies' : supplies},
             function(data) {
             //You can use any jQuery/JavaScript here!!!
-                alert('Data sent!');
-            },
+                alert(JSON.stringify(supplies)); },
             function (xhr, status, error) {
                 console.log('Error: ' + error);
                 alert('Error connecting to the server.');
